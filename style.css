@@ -100,17 +100,66 @@ body {
 
 /* RESPONSIVIDADE */
 
-@media only screen and (max-width: 700px) {
-    .gameBoard {
-        max-width: 400px;
-        grid-template: repeat(5, 1fr) / repeat(3, 1fr);
-        gap: 20px;
+@media screen and (min-width: 0px) {
+    #gameBoard {
+        /* background-color: tomato; */
+        width:100vw;
+        grid-template: repeat(6, 1fr) / repeat(3, 1fr);
+        /* gap: 7px; */
+        justify-items: center;
     }
     .card {
-        width: 80px;
+        width:  80px;
         height: 80px;
     }
     .card_front, .card_back {
         border-radius: 10px;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    #gameBoard {
+        /* background-color: blue; */
+        grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+    }
+    .card_front, .card_back {
+        border-radius: 5px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    #gameBoard {
+        /* background-color: lightcoral; */
+        max-width: 600px;
+        grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+    }
+    .card {
+        width:  130px;
+        height: 110px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #gameBoard {
+        /* background-color: lightgreen; */
+        max-width: 80vw;
+        grid-template: repeat(4, 1fr) / repeat(5, 1fr);
+    }
+    .card {
+        width:  130px;
+        height: 130px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #gameBoard {
+        /* background-color: lightpink; */
+        max-width: 65vw;
+        grid-template: repeat(4, 1fr) / repeat(5, 1fr);
+    }
+    .card {
+        width:  150px;
+        height: 140px;
     }
 }
