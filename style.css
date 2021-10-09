@@ -65,6 +65,15 @@ body {
     /* display: none; */
 }
 
+
+#gameBoard {
+    /* background-color:tomato; */
+    max-width: 700px;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+    gap: 20px;
+}
+
 #gameOver {
     /* ocupar a tela inteira e por cima dos outros elementos */
     position: absolute;
@@ -90,13 +99,6 @@ body {
     margin-top: 10px;
 }
 
-#gameBoard {
-    /* background-color:tomato; */
-    max-width: 700px;
-    display: grid;
-    grid-template: repeat(5, 1fr) / repeat(4, 1fr);
-    gap: 20px;
-}
 
 /* RESPONSIVIDADE */
 
@@ -112,11 +114,15 @@ body {
     .card {
         width:  70px;
         height: 70px;
-        /* margin: 0; */
     }
     .card_front, .card_back {
         border-radius: 10px;
     }
+    .greeting{
+        text-align: center;
+        font-size: 30px;
+    }
+
 }
 
 @media screen and (min-width: 375px) {
