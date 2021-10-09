@@ -102,15 +102,17 @@ body {
 
 @media screen and (min-width: 0px) {
     #gameBoard {
-        /* background-color: tomato; */
-        width:100vw;
-        grid-template: repeat(6, 1fr) / repeat(3, 1fr);
-        /* gap: 7px; */
+        background-color: tomato;
+        /* width:100vw; */
+        grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+        gap: 10px;
         justify-items: center;
+        justify-content: center;
     }
     .card {
-        width:  80px;
-        height: 80px;
+        width:  70px;
+        height: 70px;
+        /* margin: 0; */
     }
     .card_front, .card_back {
         border-radius: 10px;
