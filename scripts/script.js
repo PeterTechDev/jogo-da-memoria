@@ -21,6 +21,7 @@ function initializeCards(cards) {
         let cardElement = document.createElement('div');
         cardElement.id = card.id;
         cardElement.classList.add($card);
+        cardElement.classList.add('flip');
         cardElement.dataset.icon = card.icon;
 
         createCardContent(card, cardElement);
@@ -28,63 +29,72 @@ function initializeCards(cards) {
         cardElement.addEventListener('click', flipCard);
         gameBoard.appendChild(cardElement)
 
+        preview(cardElement);
+
     }))
 }
 
+function preview(card) {
+    setTimeout(() => {
+        card.classList.remove('flip');
+    },3000)
+}
+
+
 function createCardContent(card, cardElement) {
 
-    createCardFace($front, card, cardElement);
-    createCardFace($back, card, cardElement);
+            createCardFace($front, card, cardElement);
+            createCardFace($back, card, cardElement);
 
 
-}
+        }
 
 function createCardFace(face, card, element) {
 
-    let cardElementFace = document.createElement('div')
-    cardElementFace.classList.add(face)
-    if (face == $front) {
-        let iconElement = document.createElement('img')
-        iconElement.classList.add($icon);
-        iconElement.src = './assets/images/' + card.icon + ".png"
-        cardElementFace.appendChild(iconElement)
-    } else {
-        cardElementFace.innerHTML = 'back'
-    }
-    element.appendChild(cardElementFace);
-}
+            let cardElementFace = document.createElement('div')
+            cardElementFace.classList.add(face)
+            if (face == $front) {
+                let iconElement = document.createElement('img')
+                iconElement.classList.add($icon);
+                iconElement.src = './assets/images/' + card.icon + ".png"
+                cardElementFace.appendChild(iconElement)
+            } else {
+                cardElementFace.innerHTML = 'back'
+            }
+            element.appendChild(cardElementFace);
+        }
 
 
 function flipCard() {
-    if (game.setCard(this.id)) {
-        this.classList.add('flip');
-        if (game.secondCard) {
+            if (game.setCard(this.id)) {
+                this.classList.add('flip');
+                if (game.secondCard) {
 
-            if (game.checkMatch()) {
-                game.clearCards();
-                if(game.checkGameOver()){
-                    let gameOverLayer = document.getElementById('gameOver');
-                    gameOverLayer.style.display = 'flex';
+                    if (game.checkMatch()) {
+                        game.clearCards();
+                        if (game.checkGameOver()) {
+                            let gameOverLayer = document.getElementById('gameOver');
+                            gameOverLayer.style.display = 'flex';
+                        }
+                    } else {
+                        // desvira as cartas
+                        setTimeout(function () {
+
+                            let firstCardView = document.getElementById(game.firstCard.id);
+                            let secondCardView = document.getElementById(game.secondCard.id);
+
+                            firstCardView.classList.remove('flip');
+                            secondCardView.classList.remove('flip');
+                            game.unflipCards();
+                        }, 1000)
+                    }
                 }
-            } else {
-                // desvira as cartas
-                setTimeout(function () {
-
-                    let firstCardView = document.getElementById(game.firstCard.id);
-                    let secondCardView = document.getElementById(game.secondCard.id);
-
-                    firstCardView.classList.remove('flip');
-                    secondCardView.classList.remove('flip');
-                    game.unflipCards();
-                }, 1000)
             }
         }
-    }
-}
 
-function restart(){
-    game.clearCards();
-    startGame();
-    let gameOverLayer = document.getElementById('gameOver');
-    gameOverLayer.style.display = 'none';
-}
+function restart() {
+            game.clearCards();
+            startGame();
+            let gameOverLayer = document.getElementById('gameOver');
+            gameOverLayer.style.display = 'none';
+        }
