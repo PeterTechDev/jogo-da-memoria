@@ -4,6 +4,7 @@ const $card = "card";
 const $icon = "icon";
 
 
+// script conhece o game.js mas o game.js não conhece o script
 
 startGame();
 
