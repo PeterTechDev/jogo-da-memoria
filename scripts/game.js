@@ -1,6 +1,6 @@
 let game = {
 
-    avengers:[
+    avengers: [
         "captainAmerica",
         "ironMan",
         "thor",
@@ -13,12 +13,46 @@ let game = {
         "nickFury"
     ],
 
+    
+    // para bloquear enquanto seleciona a segunda carta, não é possível escolher uma terceira carta
+    lockMode: false,
     cards: null,
+    firstCard: null,
+    secondCard: null,
+    
+    
+    // regras do jogo
+    setCard: function (id) {
+        // checar se a carta foi virada
+        let card = this.cards.filter(card => card.id === id)[0];
+
+        if (card.flipped || this.lockMode) {
+            return false;
+        }
+        if (!this.firstCard) {
+            this.firstCard = card;
+            return true;
+        } else {
+            this.secondCard = card;
+            this.lockMode = true;
+            return true;
+        }
+    },
+
+    checkMatch: function () {
+        return this.firstCard.icon === this.secondCard.icon;
+    },
+
+    clearCards: function () {
+        this.firstCard = null;
+        this.secondCard = null;
+        this.lockMode = false;
+    },
 
     createCards: function (avengers) {
         this.cards = [];
-    
-        this.avengers.forEach((avenger)=>{
+
+        this.avengers.forEach((avenger) => {
             this.cards.push(this.createCardPair(avenger));
         })
         this.cards = this.cards.flatMap(pair => pair);
@@ -45,14 +79,14 @@ let game = {
     shuffleCards: function (cards) {
         let currentIndex = this.cards.length;
         let randomIndex = 0;
-    
-        while(currentIndex !== 0) {
+
+        while (currentIndex !== 0) {
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex--;
-    
+
             // inverter os valores
             [this.cards[randomIndex], this.cards[currentIndex]] = [this.cards[currentIndex], this.cards[randomIndex]];
         }
     },
-    
+
 }
