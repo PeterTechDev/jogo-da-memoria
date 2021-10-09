@@ -4,36 +4,35 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Righteous', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height:100vh;
+    height: 100vh;
     background-color: #c7cdd3;
 }
 
-.card{
+.card {
     width: 120px;
     height: 120px;
     position: relative;
-
     /* para o backface funcionar - o css entende agora que as cartasão são 3d */
     transform-style: preserve-3d;
     transition: .5s;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: transform .5s;
 }
 
 .card img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        overflow: hidden;
-    
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* overflow: hidden; */
 }
 
-.card_back,
-.card_front{
+.card_back, .card_front {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -41,39 +40,39 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.45);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
     /* as cartas viradas (por transform) ficam escondidas */
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
-.flip{
+.flip {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
-.card_front{
+.card_front {
     background-color: #101c2c;
     /* fazer a carta ficar ao contrário - precisa de b*/
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
-.card_back{
+.card_back {
     color: #101c2c;
     background-color: #05c3ff;
     font-size: 30px;
-    
     /* display: none; */
 }
 
-#gameOver{
+#gameOver {
     /* ocupar a tela inteira e por cima dos outros elementos */
     position: absolute;
     width: 100%;
     height: 100%;
-
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
     font-size: 40px;
-
     /* display vai ser alterado pelo script */
     display: none;
     justify-content: center;
@@ -82,8 +81,8 @@ body{
     top: 0;
 }
 
-#restartBtn{
-    padding:20px;
+#restartBtn {
+    padding: 20px;
     font-size: 20px;
     background-color: yellow;
     border: none;
@@ -91,10 +90,9 @@ body{
     margin-top: 10px;
 }
 
-#gameBoard{
+#gameBoard {
     /* background-color:tomato; */
     max-width: 700px;
-    
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(4, 1fr);
     gap: 20px;
