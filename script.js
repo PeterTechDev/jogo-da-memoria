@@ -1,17 +1,19 @@
-const front = "card_front";
-const back = "card_back";
+const $front = "card_front";
+const $back = "card_back";
+const $card = "card";
+const $icon = "icon";
 
 let avengers = [
-    "Captain America",
-    "Iron Man",
-    "Thor Odinson",
-    "Hulk",
-    "Black Widow",
-    "Doctor Strange",
-    "Spider Man",
-    "Ant Man",
-    "Black Panther",
-    "Nick Fury"
+    "captainAmerica",
+    "ironMan",
+    "thor",
+    "hulk",
+    "blackWidow",
+    "doctorStrange",
+    "spiderMan",
+    "antMan",
+    "blackPanther",
+    "nickFury"
 ];
 
 let cards = null;
@@ -20,7 +22,51 @@ startGame();
 function startGame() {
     cards = createCards(avengers);
     shuffleCards(cards);
-    console.log(cards);
+    // console.log(cards);
+
+    initializeCards(cards);
+}
+
+function initializeCards(cards) {
+    let gameBoard = document.getElementById('gameBoard');
+
+    // criar as cartas
+    cards.forEach((card=>{
+        
+        let cardElement = document.createElement('div');
+        cardElement.id = card.id;
+        cardElement.classList.add($card);
+        cardElement.dataset.icon = card.icon;
+
+        createCardContent(card, cardElement);
+
+        cardElement.addEventListener('click', flipCard);
+        gameBoard.appendChild(cardElement)
+
+    }))
+}
+
+function createCardContent(card, cardElement){
+
+    createCardFace($front, card, cardElement); 
+    createCardFace($back, card, cardElement); 
+
+
+}
+
+function createCardFace(face, card, element){
+
+    let cardElementFace = document.createElement('div')
+    cardElementFace.classList.add(face)
+    if(face == $front){
+        let iconElement = document.createElement('img')
+        iconElement.classList.add($icon);
+        iconElement.src = './assets/images/'+card.icon + ".png"
+        cardElementFace.appendChild(iconElement)
+    }else{
+        cardElementFace.innerHTML = 'back'
+    }
+    element.appendChild(cardElementFace);
 }
 
 function shuffleCards(cards) {
@@ -60,4 +106,8 @@ function createCardPair(avenger) {
 
 function createId(avenger) {
     return avenger + parseInt(Math.random() * 1000)
+}
+
+function flipCard(){
+    this.classList.add('flip');
 }
