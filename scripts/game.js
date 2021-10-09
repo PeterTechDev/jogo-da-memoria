@@ -31,15 +31,20 @@ let game = {
         }
         if (!this.firstCard) {
             this.firstCard = card;
+            this.firstCard.flipped = true;
             return true;
         } else {
             this.secondCard = card;
+            this.secondCard.flipped = true;
             this.lockMode = true;
             return true;
         }
     },
 
     checkMatch: function () {
+        if(!this.firstCard || !this.secondCard) {
+            return false;
+        }
         return this.firstCard.icon === this.secondCard.icon;
     },
 
