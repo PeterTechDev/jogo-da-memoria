@@ -22,7 +22,7 @@ function createCards(techs) {
     for(let tech of techs){
         cards.push(createCardPair(tech));
     }
-    console.log(cards.flatMap(pair => pair));
+    return cards.flatMap(pair => pair);
 }
 
 function createCardPair(tech){
