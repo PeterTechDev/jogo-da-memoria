@@ -25,6 +25,7 @@ let game = {
     setCard: function (id) {
         // checar se a carta foi virada
         let card = this.cards.filter(card => card.id === id)[0];
+        console.log(card);
 
         if (card.flipped || this.lockMode) {
             return false;
@@ -53,6 +54,13 @@ let game = {
         this.secondCard = null;
         this.lockMode = false;
     },
+
+    unflipCards: function () {
+        this.firstCard.flipped = false;
+        this.secondCard.flipped = false;
+        this.clearCards();
+    },
+
 
     createCards: function (avengers) {
         this.cards = [];

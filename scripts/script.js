@@ -63,6 +63,7 @@ function flipCard() {
             if (game.checkMatch()) {
                 game.clearCards();
             } else {
+                // desvira as cartas
                 setTimeout(function () {
 
                     let firstCardView = document.getElementById(game.firstCard.id);
@@ -70,7 +71,7 @@ function flipCard() {
 
                     firstCardView.classList.remove('flip');
                     secondCardView.classList.remove('flip');
-                    game.clearCards();
+                    game.unflipCards();
                 }, 1000)
             }
         }
