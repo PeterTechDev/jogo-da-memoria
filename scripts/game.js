@@ -61,6 +61,10 @@ let game = {
         this.clearCards();
     },
 
+    checkGameOver: function () {
+        // verifica se tem alguma carta virada
+        return this.cards.filter(card=>!card.flipped).length == 0;
+    },
 
     createCards: function (avengers) {
         this.cards = [];
