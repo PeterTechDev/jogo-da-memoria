@@ -6,6 +6,11 @@
 
 body{
     font-family: 'Righteous', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: #c7cdd3;
 }
 
 .card{
@@ -59,8 +64,9 @@ body{
     background-color: rgba(0,0,0,0.9);
     color: white;
     font-size: 40px;
+
     /* display vai ser alterado pelo script */
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -74,4 +80,13 @@ body{
     border: none;
     border-radius: 10px;
     margin-top: 10px;
+}
+
+#gameBoard{
+    /* background-color:tomato; */
+    max-width: 700px;
+    
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    gap: 20px;
 }
