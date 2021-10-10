@@ -88,10 +88,10 @@ body {
     left: calc(-1 * var(--borderWidth));
     height: calc(100% + var(--borderWidth) * 2);
     width: calc(100% + var(--borderWidth) * 2);
-    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background: linear-gradient(60deg, #f8f9fa, #dee2e6, #6c757d, #495057, #343a40, #212529);
     border-radius: calc(2 * var(--borderWidth));
     z-index: -1;
-    animation: animatedgradient 3s ease alternate infinite;
+    animation: animatedgradient 4s ease alternate infinite;
     background-size: 300% 300%;
 }
 @keyframes imgMove {
@@ -124,7 +124,7 @@ body {
     max-width: 700px;
     display: grid;
     grid-template: repeat(5, 1fr) / repeat(4, 1fr);
-    gap: 20px;
+    /* gap: 20px; */
 }
 
 #gameOver {
@@ -159,7 +159,7 @@ body {
         /* background-color: tomato; */
         /* width:100vw; */
         grid-template: repeat(5, 1fr) / repeat(4, 1fr);
-        gap: 10px;
+        gap: 15px;
         justify-items: center;
         justify-content: center;
     }
