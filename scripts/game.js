@@ -1,6 +1,6 @@
 let game = {
 
-    avengers: [ 
+    avengers: [
         "captainAmerica",
         "ironMan",
         "thor",
@@ -26,7 +26,7 @@ let game = {
         let card = this.cards.filter(card => card.id === id)[0];
 
 
-        if (card.flipped || this.lockMode) { 
+        if (card.flipped || this.lockMode) {
             return false;
         }
         if (!this.firstCard) {
@@ -45,7 +45,7 @@ let game = {
         if (!this.firstCard || !this.secondCard) {
             return false;
         } else if (this.firstCard.icon === this.secondCard.icon) {
-            
+
             // add a borda
             let idFirstCard = '#' + String(this.firstCard.id)
             let idSecondCard = '#' + String(this.secondCard.id)
@@ -72,8 +72,8 @@ let game = {
         return this.cards.filter(card => !card.flipped).length == 0; // se total de cartas não viradas for zero
     },
 
-    flipAll: function (){ //dev tool para testes
-        this.cards.forEach(card =>card.flipped = true);
+    flipAll: function () { //dev tool para testes
+        this.cards.forEach(card => card.flipped = true);
         // this.cards.forEach(card =>console.log(card));
     },
 
@@ -90,7 +90,7 @@ let game = {
 
     createCardPair: function (avenger) {
         return [{
-            id: this.createId(avenger), 
+            id: this.createId(avenger),
             icon: avenger,
             flipped: false,
         }, {

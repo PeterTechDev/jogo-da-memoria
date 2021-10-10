@@ -71,13 +71,16 @@ function flipCard() {
         if (game.secondCard) {
             if (game.checkMatch()) {
                 game.clearCards();
+                hitSound.play()
                 console.log('acertou');
                 if (game.checkGameOver()) {
                     showLayers();
                 }
             } else {
                 // desvira as cartas
+                console.log('errou');
                 setTimeout(function () {
+                    missSound.play();
 
                     let firstCardView = document.getElementById(game.firstCard.id);
                     let secondCardView = document.getElementById(game.secondCard.id);

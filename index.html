@@ -21,13 +21,14 @@
 </head>
 
 <body>
-  
+
     <div id="gameBoard">
-        
+
     </div>
     <div id="yay">
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_ISbOsd.json"  background="transparent"  speed="1"  loop  autoplay></lottie-player>
+        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_ISbOsd.json" background="transparent"
+            speed="1" loop autoplay></lottie-player>
     </div>
     <!-- FIM DO JOGO -->
     <div id="gameOver">
@@ -36,9 +37,14 @@
         </div>
         <button id="restartBtn" onclick="restart();">Jogar novamente</button>
     </div>
-    
+
+    <!-- AUDIOS -->
+    <audio src="./assets/audios/miss.wav" id="missSound"></audio>
+    <audio src="./assets/audios/hit.mp3" id="hitSound"></audio>
+
     <script src="./scripts/game.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/extra.js"></script>
 </body>
 
 </html>
