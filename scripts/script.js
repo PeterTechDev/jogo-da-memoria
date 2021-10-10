@@ -116,10 +116,11 @@ function showLayers() {
 }
 
 function restart() {
-    game.clearCards();
-    startGame();
-    let gameOverLayer = document.getElementById('gameOver');
-    gameOverLayer.style.display = 'none';
+    // game.clearCards();
+    // startGame();
+    // let gameOverLayer = document.getElementById('gameOver');
+    // gameOverLayer.style.display = 'none';
+    location.reload();
 }
 
 function gg() {
