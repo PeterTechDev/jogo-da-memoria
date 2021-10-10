@@ -14,6 +14,16 @@ body {
     background-color: #c7cdd3;
 }
 
+#startGame{
+    background: green;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: gold;
+    font-weight:bolder;
+    border:none;
+
+}
 .card {
     width: 120px;
     height: 120px;
@@ -219,6 +229,10 @@ header{
         text-align: center;
         font-size: 30px;
     }
+    header{
+        width: 90%;
+        justify-content: space-between;
+    }
 }
 
 @media screen and (min-width: 375px) {
@@ -234,7 +248,9 @@ header{
         height: 90px;
     }
     header{
-    width: 80%;
+    width: 70%;
+    justify-content: space-between;
+    margin:0 auto;
     }
 }
 
