@@ -167,10 +167,12 @@ body {
 #muteBtn{
     background-image: url("../assets/feature/full.svg");
     background-size: cover;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     margin:30px;
     transition: 350ms;
+    border: 2px solid rgb(27, 26, 26);
+    border-radius:50%;
 }
 
 #muteBtn:hover {

@@ -17,3 +17,6 @@ function muteSounds() {
 function changeBg(boolean) {
     boolean ? muteBtn.style.backgroundImage = 'url(./assets/feature/muted.svg)' : muteBtn.style.backgroundImage = 'url(./assets/feature/full.svg)'
 }
+
+    /* padding: 5px; */
+// muteBtn.addEventListener('mouseover', () => muteBtn.style.backgroundImage = 'url(./assets/feature/low.svg)')
