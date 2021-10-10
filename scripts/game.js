@@ -6,10 +6,10 @@ let game = {
         "thor",
         "hulk",
         "blackWidow",
-        "doctorStrange",
+        "deadpool",
         "spiderMan",
-        "antMan",
-        "blackPanther",
+        "groot",
+        "hawkeye",
         "nickFury"
     ],
 

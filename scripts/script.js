@@ -56,7 +56,7 @@ function createCardFace(face, card, element) {
     if (face == $front) {
         let iconElement = document.createElement('img')
         iconElement.classList.add($icon);
-        iconElement.src = './assets/images/' + card.icon + ".png"
+        iconElement.src = './assets/images/' + card.icon + ".svg"
         cardElementFace.appendChild(iconElement)
     } else {
         cardElementFace.innerHTML = `<img src="./assets/images/logo.png" alt="logo avengers">`
