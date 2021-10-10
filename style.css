@@ -88,7 +88,7 @@ body {
     left: calc(-1 * var(--borderWidth));
     height: calc(100% + var(--borderWidth) * 2);
     width: calc(100% + var(--borderWidth) * 2);
-    background: linear-gradient(60deg, #f8f9fa, #dee2e6, #6c757d, #495057, #343a40, #212529);
+    background: linear-gradient(60deg, #90e09d, #49d673, #2bd650, #52c79a, #d9ec83, #13e41e);
     border-radius: calc(2 * var(--borderWidth));
     z-index: -1;
     animation: animatedgradient 4s ease alternate infinite;
