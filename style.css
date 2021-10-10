@@ -128,6 +128,8 @@ body {
 }
 
 #yay{
+    width: 100%;
+    height: 100%;
     position: absolute;
     display: none;
 }
@@ -155,6 +157,12 @@ body {
     border: none;
     border-radius: 10px;
     margin-top: 10px;
+}
+
+/* HOVER */
+.card:hover, #restartBtn:hover {
+    cursor: pointer;
+    /* transform: scale(1.1); */
 }
 
 /* RESPONSIVIDADE */
@@ -214,19 +222,19 @@ body {
         grid-template: repeat(4, 1fr) / repeat(5, 1fr);
     }
     .card {
-        width: 110px;
-        height: 150px;
+        width: 140px;
+        height: 160px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     #gameBoard {
         /* background-color: lightpink; */
-        max-width: 65vw;
+        max-width: 80vw;
         grid-template: repeat(4, 1fr) / repeat(5, 1fr);
     }
     .card {
         width: 150px;
-        height: 140px;
+        height: 170px;
     }
 }

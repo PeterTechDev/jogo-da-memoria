@@ -73,7 +73,7 @@ function flipCard() {
                 game.clearCards();
                 console.log('acertou');
                 if (game.checkGameOver()) {
-                    game.showLayers();
+                    showLayers();
                 }
             } else {
                 // desvira as cartas
@@ -99,7 +99,7 @@ function showLayers() {
     setTimeout(() => {
         yayLayer.style.display = 'none';
         gameOverLayer.style.display = 'flex';
-    }, 2000)
+    }, 3000)
 }
 
 function restart() {
