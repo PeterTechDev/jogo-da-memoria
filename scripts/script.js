@@ -59,7 +59,7 @@ function createCardFace(face, card, element) {
                 iconElement.src = './assets/images/' + card.icon + ".png"
                 cardElementFace.appendChild(iconElement)
             } else {
-                cardElementFace.innerHTML = 'back'
+                cardElementFace.innerHTML = `<img src="./assets/images/logo.png" alt="logo avengers">`
             }
             element.appendChild(cardElementFace);
         }
@@ -72,6 +72,7 @@ function flipCard() {
 
                     if (game.checkMatch()) {
                         game.clearCards();
+                            console.log('acertou');
                         if (game.checkGameOver()) {
                             let gameOverLayer = document.getElementById('gameOver');
                             gameOverLayer.style.display = 'flex';

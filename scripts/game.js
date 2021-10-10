@@ -13,19 +13,19 @@ let game = {
         "nickFury"
     ],
 
-    
+
     // para bloquear enquanto seleciona a segunda carta, não é possível escolher uma terceira carta
     lockMode: false,
     cards: null,
     firstCard: null,
     secondCard: null,
-    
-    
+
+
     // regras do jogo
     setCard: function (id) {
         // checar se a carta foi virada
         let card = this.cards.filter(card => card.id === id)[0];
-        // console.log(card);
+
 
         if (card.flipped || this.lockMode) {
             return false;
@@ -43,8 +43,14 @@ let game = {
     },
 
     checkMatch: function () {
-        if(!this.firstCard || !this.secondCard) {
+        if (!this.firstCard || !this.secondCard) {
             return false;
+        } else if (this.firstCard.icon === this.secondCard.icon) {
+            
+            let idFirstCard = '#' + String(this.firstCard.id)
+            let idSecondCard = '#' + String(this.secondCard.id)
+            document.querySelector(idFirstCard).classList.add('gradient-border')
+            document.querySelector(idSecondCard).classList.add('gradient-border')
         }
         return this.firstCard.icon === this.secondCard.icon;
     },
@@ -63,7 +69,7 @@ let game = {
 
     checkGameOver: function () {
         // verifica se tem alguma carta virada
-        return this.cards.filter(card=>!card.flipped).length == 0;
+        return this.cards.filter(card => !card.flipped).length == 0;
     },
 
     createCards: function (avengers) {
