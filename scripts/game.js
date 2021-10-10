@@ -1,6 +1,6 @@
 let game = {
 
-    avengers: [
+    avengers: [ 
         "captainAmerica",
         "ironMan",
         "thor",
@@ -14,20 +14,19 @@ let game = {
     ],
 
 
-    // para bloquear enquanto seleciona a segunda carta, não é possível escolher uma terceira carta
-    lockMode: false,
+    lockMode: false, //carta bloqueada enquanto o par não for encontrado
     cards: null,
-    firstCard: null,
+    firstCard: null, //auxiliares para serem comparadas com a seguinte no click
     secondCard: null,
 
 
-    // regras do jogo
+    // REGRAS DO JOGO
     setCard: function (id) {
         // checar se a carta foi virada
         let card = this.cards.filter(card => card.id === id)[0];
 
 
-        if (card.flipped || this.lockMode) {
+        if (card.flipped || this.lockMode) { 
             return false;
         }
         if (!this.firstCard) {
@@ -42,12 +41,12 @@ let game = {
         }
     },
 
-    checkMatch: function () {
+    checkMatch: function () { // checar os pares
         if (!this.firstCard || !this.secondCard) {
             return false;
         } else if (this.firstCard.icon === this.secondCard.icon) {
             
-            // colocar a borda
+            // add a borda
             let idFirstCard = '#' + String(this.firstCard.id)
             let idSecondCard = '#' + String(this.secondCard.id)
             document.querySelector(idFirstCard).classList.add('gradient-border')
@@ -56,7 +55,7 @@ let game = {
         return this.firstCard.icon === this.secondCard.icon;
     },
 
-    clearCards: function () {
+    clearCards: function () { //redefine os valores quando não é encontrado o par
         this.firstCard = null;
         this.secondCard = null;
         this.lockMode = false;
@@ -70,10 +69,10 @@ let game = {
 
     checkGameOver: function () {
         // verifica se tem alguma carta virada
-        return this.cards.filter(card => !card.flipped).length == 0;
+        return this.cards.filter(card => !card.flipped).length == 0; // se total de cartas não viradas for zero
     },
 
-    flipAll: function (){
+    flipAll: function (){ //dev tool para testes
         this.cards.forEach(card =>card.flipped = true);
         // this.cards.forEach(card =>console.log(card));
     },
@@ -84,14 +83,14 @@ let game = {
         this.avengers.forEach((avenger) => {
             this.cards.push(this.createCardPair(avenger));
         })
-        this.cards = this.cards.flatMap(pair => pair);
+        this.cards = this.cards.flatMap(pair => pair); // flatMap retorna 2 arrays separados
         this.shuffleCards();
         // return this.cards;
     },
 
     createCardPair: function (avenger) {
         return [{
-            id: this.createId(avenger),
+            id: this.createId(avenger), 
             icon: avenger,
             flipped: false,
         }, {
@@ -105,7 +104,7 @@ let game = {
         return avenger + parseInt(Math.random() * 1000)
     },
 
-    shuffleCards: function (cards) {
+    shuffleCards: function (cards) { // percorrer todos os elementos do array e inverte com o anterior aleoatoriamente
         let currentIndex = this.cards.length;
         let randomIndex = 0;
 
