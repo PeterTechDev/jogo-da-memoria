@@ -20,6 +20,7 @@ let game = {
     secondCard: null,
 
 
+
     // REGRAS DO JOGO
     setCard: function (id) {
         // checar se a carta foi virada
@@ -116,5 +117,5 @@ let game = {
             [this.cards[randomIndex], this.cards[currentIndex]] = [this.cards[currentIndex], this.cards[randomIndex]];
         }
     },
-
 }
+

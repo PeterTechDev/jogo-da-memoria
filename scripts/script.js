@@ -6,10 +6,16 @@ const $icon = "icon";
 
 // script conhece o game.js mas o game.js não conhece o script
 
-startGame();
+// startGame();
+initializeCards(game.createCards());
+
+let clock;
+
 
 function startGame() {
     initializeCards(game.createCards());
+    preview()
+    setTimeout(() => startTimer(),3000)
 }
 
 function initializeCards(cards) {
@@ -21,7 +27,6 @@ function initializeCards(cards) {
         let cardElement = document.createElement('div');
         cardElement.id = card.id;
         cardElement.classList.add($card);
-        cardElement.classList.add('flip');
         cardElement.dataset.icon = card.icon;
 
         createCardContent(card, cardElement);
@@ -29,15 +34,17 @@ function initializeCards(cards) {
         cardElement.addEventListener('click', flipCard);
         gameBoard.appendChild(cardElement)
 
-        preview(cardElement);
-
     }))
 }
 
-function preview(card) {
-    setTimeout(() => {
-        card.classList.remove('flip');
-    }, 3000)
+function preview() {
+    let cards = document.querySelectorAll('.card')
+    cards.forEach(card => {
+        card.classList.add('flip')
+        setTimeout(() => {
+            card.classList.remove('flip');
+        }, 3000)
+    })
 }
 
 
@@ -74,6 +81,7 @@ function flipCard() {
                 hitSound.play()
                 console.log('acertou');
                 if (game.checkGameOver()) {
+                    stopTimer();
                     showLayers();
                 }
             } else {
@@ -97,10 +105,12 @@ function flipCard() {
 function showLayers() {
     let gameOverLayer = document.getElementById('gameOver');
     let yayLayer = document.getElementById('yay');
+    let result = document.getElementById('result');
 
     yayLayer.style.display = 'flex';
     setTimeout(() => {
         yayLayer.style.display = 'none';
+        result.innerText += timeResult;
         gameOverLayer.style.display = 'flex';
     }, 3000)
 }
@@ -120,4 +130,39 @@ function gg() {
         avenger.classList.add('gradient-border');
     })
     showLayers()
+}
+
+// timer
+const timerDisplay = document.querySelector('.timer');
+const clockDisplay = document.getElementById('clock');
+
+let minutes = 0;
+let aux = 0;
+let seconds = 0
+let timeResult;
+
+function timer() {
+    if (seconds < 60) {
+        aux += 1;
+        seconds = aux < 10 ? '0' + aux : aux
+        clockDisplay.innerHTML = `0${minutes}:${seconds}`;
+    } else {
+        aux = 0;
+        seconds = 0;
+        minutes += 1;
+    }
+}
+
+function startTimer(){
+    clock = setInterval(timer, 1000);
+}
+
+function stopTimer() {
+    clearInterval(clock);
+    if (minutes < 1) {
+        timeResult = `${seconds} segundos`;
+    } else {
+        timeResult = `0${minutes}:${seconds}`;
+    }
+    console.log('Tempo foi ' + timeResult);
 }

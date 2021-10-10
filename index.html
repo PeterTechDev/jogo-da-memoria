@@ -22,7 +22,12 @@
 
 <body>
     <header>
-        
+        <div class="timer">
+            <span id="clock">00:00</span>
+        </div>
+        <div class="startContainer">
+            <button id="startGame" onclick="startGame()">Jogar</button>
+        </div>
         <div class="teste" onclick="muteSounds()" id="muteBtn"></div>
     </header>
 
@@ -37,9 +42,8 @@
     <!-- FIM DO JOGO -->
     <div id="gameOver">
         <div class="greeting">
-            Parabéns!
-            <br>
-            Você conseguiu
+            <h2>Parabéns!</h2>
+            <p id="result">Seu tempo foi de </p>
         </div>
         <button id="restartBtn" onclick="restart();">Jogar novamente</button>
     </div>
