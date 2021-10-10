@@ -68,11 +68,17 @@ body {
     width: 60%;
 }
 
+
 .gradient-border {
     --borderWidth: 5px;
     background: #1D1F20;
     position: relative;
     border-radius: var(--borderWidth);
+    
+}
+
+.gradient-border .card_front img {
+    animation: imgMove 1s linear alternate 1;
 }
 
 .gradient-border:after {
@@ -87,6 +93,18 @@ body {
     z-index: -1;
     animation: animatedgradient 3s ease alternate infinite;
     background-size: 300% 300%;
+}
+@keyframes imgMove {
+    0% {
+        transform: scale(1)
+    }
+    50%{
+        transform: scale(.8)
+    }
+    100%{
+        transform: scale(1)
+
+    }
 }
 
 @keyframes animatedgradient {
