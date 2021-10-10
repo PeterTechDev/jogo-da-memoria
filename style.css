@@ -127,6 +127,11 @@ body {
     /* gap: 20px; */
 }
 
+#yay{
+    position: absolute;
+    display: none;
+}
+
 #gameOver {
     /* ocupar a tela inteira e por cima dos outros elementos */
     position: absolute;

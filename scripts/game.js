@@ -47,6 +47,7 @@ let game = {
             return false;
         } else if (this.firstCard.icon === this.secondCard.icon) {
             
+            // colocar a borda
             let idFirstCard = '#' + String(this.firstCard.id)
             let idSecondCard = '#' + String(this.secondCard.id)
             document.querySelector(idFirstCard).classList.add('gradient-border')
@@ -70,6 +71,11 @@ let game = {
     checkGameOver: function () {
         // verifica se tem alguma carta virada
         return this.cards.filter(card => !card.flipped).length == 0;
+    },
+
+    flipAll: function (){
+        this.cards.forEach(card =>card.flipped = true);
+        // this.cards.forEach(card =>console.log(card));
     },
 
     createCards: function (avengers) {
