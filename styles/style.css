@@ -14,16 +14,16 @@ body {
     background-color: #c7cdd3;
 }
 
-#startGame{
+#startGame {
     background: green;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     color: gold;
-    font-weight:bolder;
-    border:none;
-
+    font-weight: bolder;
+    border: none;
 }
+
 .card {
     width: 120px;
     height: 120px;
@@ -174,15 +174,15 @@ body {
     /* transform: scale(1.1); */
 }
 
-#muteBtn{
+#muteBtn {
     background-image: url("../assets/feature/full.svg");
     background-size: cover;
     height: 40px;
     width: 40px;
-    margin:30px;
+    margin: 30px;
     transition: 350ms;
     border: 2px solid rgb(27, 26, 26);
-    border-radius:50%;
+    border-radius: 50%;
 }
 
 #muteBtn:hover {
@@ -191,7 +191,7 @@ body {
     background-image: url("../assets/feature/low.svg")
 }
 
-header{
+header {
     display: flex;
     width: 30%;
     /* background-color:tomato; */
@@ -199,10 +199,10 @@ header{
     justify-content: space-around;
 }
 
-.timer{
+.timer {
     display: flex;
     align-items: center;
-    height:40px;
+    height: 40px;
     width: 120px;
     /* border: 1px solid #000; */
 }
@@ -229,7 +229,7 @@ header{
         text-align: center;
         font-size: 30px;
     }
-    header{
+    header {
         width: 90%;
         justify-content: space-between;
     }
@@ -247,10 +247,10 @@ header{
         width: 70px;
         height: 90px;
     }
-    header{
-    width: 70%;
-    justify-content: space-between;
-    margin:0 auto;
+    header {
+        width: 70%;
+        justify-content: space-between;
+        margin: 0 auto;
     }
 }
 
@@ -276,9 +276,9 @@ header{
         width: 140px;
         height: 160px;
     }
-    header{
+    header {
         width: 50%;
-        }
+    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -290,5 +290,8 @@ header{
     .card {
         width: 150px;
         height: 170px;
+    }
+    header {
+        margin-bottom: 20px;
     }
 }
