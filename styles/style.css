@@ -185,9 +185,6 @@ body {
         text-align: center;
         font-size: 30px;
     }
-    header {
-        background-color: #13e41e;
-    }
 }
 
 @media screen and (min-width: 375px) {
