@@ -10,7 +10,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
     background-color: #c7cdd3;
 }
 
@@ -22,6 +21,10 @@ body {
     color: gold;
     font-weight: bolder;
     border: none;
+}
+
+#startGame:hover{
+    cursor: pointer;
 }
 
 .card {
@@ -179,7 +182,6 @@ body {
     background-size: cover;
     height: 40px;
     width: 40px;
-    margin: 30px;
     transition: 350ms;
     border: 2px solid rgb(27, 26, 26);
     border-radius: 50%;
@@ -192,8 +194,11 @@ body {
 }
 
 header {
-    display: flex;
+    display: grid;
+    grid-template: 1fr / 1fr 2fr 1fr ;
+    justify-items: center;
     width: 30%;
+    margin: 5% auto;
     /* background-color:tomato; */
     align-items: center;
     justify-content: space-around;
@@ -202,10 +207,10 @@ header {
 .timer {
     display: flex;
     align-items: center;
-    height: 40px;
-    width: 120px;
+    text-align: center;
     /* border: 1px solid #000; */
 }
+
 
 /* RESPONSIVIDADE */
 
@@ -250,7 +255,6 @@ header {
     header {
         width: 70%;
         justify-content: space-between;
-        margin: 0 auto;
     }
 }
 

@@ -3,8 +3,10 @@ const $back = "card_back";
 const $card = "card";
 const $icon = "icon";
 
+const startGameBtn = document.getElementById('startGame');
 
-// script conhece o game.js mas o game.js não conhece o script
+
+// interface conhece o game.js mas o game.js não conhece o script
 
 // startGame();
 initializeCards(game.createCards());
@@ -14,8 +16,10 @@ let clock;
 
 function startGame() {
     initializeCards(game.createCards());
+    game.lockMode = false
     preview()
     setTimeout(() => startTimer(),3000)
+    startGameBtn.style.display = "none";
 }
 
 function initializeCards(cards) {
@@ -28,12 +32,11 @@ function initializeCards(cards) {
         cardElement.id = card.id;
         cardElement.classList.add($card);
         cardElement.dataset.icon = card.icon;
-
+        
         createCardContent(card, cardElement);
-
+        
         cardElement.addEventListener('click', flipCard);
         gameBoard.appendChild(cardElement)
-
     }))
 }
 

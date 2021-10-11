@@ -14,7 +14,7 @@ let game = {
     ],
 
 
-    lockMode: false, //carta bloqueada enquanto o par não for encontrado
+    lockMode: true, //carta bloqueada enquanto o par não for encontrado
     cards: null,
     firstCard: null, //auxiliares para serem comparadas com a seguinte no click
     secondCard: null,
@@ -73,10 +73,10 @@ let game = {
         return this.cards.filter(card => !card.flipped).length == 0; // se total de cartas não viradas for zero
     },
 
-    flipAll: function () { //dev tool para testes
-        this.cards.forEach(card => card.flipped = true);
-        // this.cards.forEach(card =>console.log(card));
-    },
+    // flipAll: function () { //dev tool para testes
+    //     this.cards.forEach(card => card.flipped = true);
+    //     // this.cards.forEach(card =>console.log(card));
+    // },
 
     createCards: function (avengers) {
         this.cards = [];
