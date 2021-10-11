@@ -18,21 +18,22 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/header.css">
 </head>
 
 <body>
     <header>
-        <div class="timer">
-            <span id="clock">00:00</span>
-        </div>
-        <div class="startContainer">
-            <button id="startGame" onclick="startGame()">
-            <p>
+        <div class="btnStart">
+            <div class="btn_front">
+                <div id="clock">00:00</div>
+            </div>
+            <div class="btn_back">
+                <button id="startGame" onclick="startGame()">  
                 &#9658
-            </p>
-            </button>
+                </button>
+            </div>
         </div>
-        <div class="teste" onclick="muteSounds()" id="muteBtn"></div>
+        <div onclick="muteSounds()" id="muteBtn"></div>
     </header>
 
     <div id="gameBoard">

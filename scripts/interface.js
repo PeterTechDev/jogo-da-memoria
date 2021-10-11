@@ -17,9 +17,10 @@ let clock;
 function startGame() {
     initializeCards(game.createCards());
     game.lockMode = false
+    setTimeout(() => document.querySelector('.btnStart').classList.add('btn_flip'), 2000)
     preview()
     setTimeout(() => startTimer(),3000)
-    startGameBtn.style.display = "none";
+    startGameBtn.disabled = true;
 }
 
 function initializeCards(cards) {
@@ -137,7 +138,7 @@ function gg() {
 }
 
 // timer
-const timerDisplay = document.querySelector('.timer');
+// const timerDisplay = document.querySelector('.timer');
 const clockDisplay = document.getElementById('clock');
 
 let minutes = 0;
