@@ -16,10 +16,10 @@ let clock;
 
 function startGame() {
     initializeCards(game.createCards());
-    game.lockMode = false
     setTimeout(() => document.querySelector('.btnStart').classList.add('btn_flip'), 2000)
     preview()
     setTimeout(() => startTimer(),3000)
+    setTimeout(() => game.lockMode = false, 3500)
     startGameBtn.disabled = true;
 }
 
