@@ -63,6 +63,9 @@ body {
     border: 5px solid #939a9c;
 
 }
+.card_back:hover{
+    background-color: #939a9c;
+}
 
 .card_back img {
     width: 60%;

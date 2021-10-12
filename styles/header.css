@@ -1,77 +1,77 @@
 header {
-    width:60vw;
+    width: 60vw;
     min-width: 325px;
     max-width: 760px;
-    display:flex;
-    justify-content: space-evenly;
+    display: flex;
     justify-content: space-evenly;
     justify-items: center;
     align-items: center;
-    position:relative;
+    position: relative;
     padding: 15px;
 }
 
 .btnStart {
-    width: 65px;
-    height : 65px;
-	border-radius:50%;
-
+    width: 76px;
+    height: 33px;
+    display: flex;
+    align-items: center;
     position: relative;
-
     transform-style: preserve-3d;
-    transition:  transform 1s;
+    transition: transform 1s;
 }
 
 .btn_front, .btn_back {
     width: 100%;
     height: 100%;
-	border-radius:50%;
-
-
     position: absolute;
-
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
     align-items: center;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.45);
-
     backface-visibility: hidden;
 }
 
 .btn_flip {
-    transform:rotateX(180deg);
+    transform: rotateX(180deg);
 }
 
-.btn_front{
-    transform:rotateX(180deg);
+.btn_front {
+    transform: rotateX(180deg);
     width: 65px;
-    height : 30px;
+    height: 30px;
     border-radius: 20px;
-    background-color:orange;
+    background-color: orange;
+}
+.btn_front:hover {
+    cursor:not-allowed;
 }
 
-#startGame{
+.btn_back {
+    animation: pulse 2s infinite linear;
+    box-shadow: inset 0px 1px 0px 0px #a4e271;
+    background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+    background-color: #89c403;
+    display: inline-block;
+    border-radius: 6px;
+
+    /* padding:6px 24px; */
+    text-shadow: 0px 1px 0px #528009;
+}
+
+#startGame {
     width: 100%;
     height: 100%;
-	background-color:#89c403;
-    font-size: 25px;
-    border: none;
-	display:inline-block;
-	cursor:pointer;
-	color:#b3b0b0;
-    font-size: 30px;
-	font-family:Arial;
-	font-weight:bold;
-	text-shadow:0px 1px 0px #d4e0bf;
-    border-radius: 50%;
-}
-
-#startGame:hover{
-    background-color:#77a809;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid #74b807;
+    color: yellow;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #startGame:hover {
-    cursor: pointer;
+    background-color: #d1e284;
 }
 
 #muteBtn {
@@ -82,7 +82,6 @@ header {
     transition: 350ms;
     border: 2px solid rgb(27, 26, 26);
     border-radius: 50%;
-    
     position: absolute;
     right: 2%;
 }
@@ -108,16 +107,15 @@ header {
 
 @keyframes pulse {
     0% {
-        transform: scale(0.85);
-        /* font-size: smaller; */
-        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0.7);
+        transform: scale(1.1);
+        box-shadow: 0 0 0 0 rgba(197, 212, 58, 0.7);
     }
     70% {
         transform: scale(1);
         box-shadow: 0 0 0 20px rgba(65, 240, 152, 0);
     }
     100% {
-        transform: scale(0.85);
+        transform: scale(1.1);
         box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
     }
 }
