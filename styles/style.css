@@ -73,9 +73,8 @@ body {
 
 .gradient-border {
     --borderWidth: 5px;
-    background: #1D1F20;
-    position: relative;
     border-radius: var(--borderWidth);
+    position: relative;
 }
 
 .gradient-border .card_front img {
@@ -190,6 +189,9 @@ body {
         text-align: center;
         font-size: 30px;
     }
+    .btnStart {
+        margin-right: 30% ;
+        }
 }
 
 @media screen and (min-width: 375px) {
@@ -216,6 +218,9 @@ body {
         width: 110px;
         height: 130px;
     }
+    .btnStart {
+        margin-right: 45% ;
+        }
 }
 
 @media screen and (min-width: 1024px) {
@@ -227,6 +232,9 @@ body {
     .card {
         width: 140px;
         height: 160px;
+    }
+    .btnStart{
+        transform: scale(.9);
     }
 
 }
