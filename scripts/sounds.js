@@ -16,6 +16,6 @@ function muteSounds() {
 }
 
 function changeBg(boolean) {
-    boolean ? muteBtn.style.backgroundImage = 'url(./assets/feature/muted.svg)' : muteBtn.style.backgroundImage = 'url(./assets/feature/full.svg)'
+    boolean ? muteBtn.style.backgroundImage = 'url(../assets/images/audio/muted.svg)' : muteBtn.style.backgroundImage = 'url(../assets/images/audio/full.svg)'
 }
 
