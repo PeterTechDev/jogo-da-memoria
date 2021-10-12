@@ -1,7 +1,11 @@
-# jogo-da-memoria
+# Jogo da memória 
+## Tema: Avengers
+##
+
 
 Link para interagir: https://petertechdev.github.io/jogo-da-memoria/
 
-- [ ] Adicionar contador de movimentos
-- [ ] Adicionar timer
-- [ ] Adicionar local storage
+- [ x ] Botão para iniciar o jogo
+- [ x ] Adicionar timer
+- [ x ] Sons interativos
+- [ x ] Botão para mutar os Sons
