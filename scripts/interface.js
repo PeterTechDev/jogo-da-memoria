@@ -67,10 +67,11 @@ function createCardFace(face, card, element) {
     if (face == $front) {
         let iconElement = document.createElement('img')
         iconElement.classList.add($icon);
-        iconElement.src = './assets/images/' + card.icon + ".svg"
+        iconElement.src = `./assets/images/${card.icon}.svg`
+        iconElement.alt = `logo do ${card.icon}`
         cardElementFace.appendChild(iconElement)
     } else {
-        cardElementFace.innerHTML = `<img src="./assets/images/logo.png" alt="logo avengers">`
+        cardElementFace.innerHTML = `<img src="./assets/images/logo.png" alt="logo dos vingadores">`
     }
     element.appendChild(cardElementFace);
 }
