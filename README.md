@@ -20,8 +20,8 @@
 </h2>
 <h3>ATENÇÃO: nos iphones ocorre um bug na hora de selecionar as cartas</h3>
 <h2>SCREENSHOTS</h2>
-<img width="450px" align="left"src="https://user-images.githubusercontent.com/78622386/136984215-c58c8b80-1685-4fbb-8f7f-47fb887d4a0d.png" alt="screenshot do jogo">
-<img width="450px" align="" src="https://user-images.githubusercontent.com/78622386/136984512-de8ceb1f-c158-4768-8fe6-57641781778e.png" alt="screenshot do jogo">
+<img width="350px" align="left"src="https://user-images.githubusercontent.com/78622386/136984215-c58c8b80-1685-4fbb-8f7f-47fb887d4a0d.png" alt="screenshot do jogo">
+<img width="350px" align="" src="https://user-images.githubusercontent.com/78622386/136984512-de8ceb1f-c158-4768-8fe6-57641781778e.png" alt="screenshot do jogo">
 <br>
 <hr>
 <br>
