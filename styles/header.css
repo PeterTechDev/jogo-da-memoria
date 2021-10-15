@@ -89,7 +89,6 @@ header {
 #muteBtn:hover {
     cursor: pointer;
     transform: scale(1.1);
-    background-image: url("../assets/images/audio/low.svg")
 }
 
 @keyframes pulse {
