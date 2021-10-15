@@ -29,7 +29,7 @@
 <img width="450px" align="" src="https://user-images.githubusercontent.com/78622386/137550142-d69d0510-4190-44da-b4b4-3fe28f758468.png" alt="screenshot relatório lighthouse">
 <hr>
 <h2>Tecnologias e métodos</h2>
-<h3>HTML</h3>
+<h3>HTML </h3>
 <ul>
     <li> Meta description  </li>
     <li> Tag audio </li>
