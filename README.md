@@ -11,7 +11,7 @@
 - [x] Adicionar timer
 - [x] Sons interativos
 - [x] Botão para mutar os Sons
-- [x] Responsividade
+- [x] Responsividade 
 
 <hr>
 
