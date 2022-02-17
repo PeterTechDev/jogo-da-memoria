@@ -1,6 +1,6 @@
 <h1>Jogo da memória: Avengers</h1>
 <br>
-<h2>Objetivos</h2>
+<h2>Objetivos</h2> 
 
 - [x] Criar um jogo da memória de cartas
 <h2>Objetivos extras</h2>
