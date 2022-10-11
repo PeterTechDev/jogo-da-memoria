@@ -6,7 +6,7 @@
 <h2>Objetivos extras</h2>
 
 - [x] Botão para iniciar o jogo;
-- [x] Tema vingadores
+- [x] Tema vingadores;
 - [x] Dar um "preview" das cartas antes de iniciar o jogo
 - [x] Adicionar timer
 - [x] Sons interativos
